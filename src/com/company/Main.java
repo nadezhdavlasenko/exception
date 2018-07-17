@@ -3,6 +3,10 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        NullObject.callMethodOnNull();
+        ExceptionGenerator1.catchException();
+        ExceptionGenerator2.generateAndCatchException(NullObject.object);
+        StackOverflowErrorGenerator.generate();
+        OutOfMemoryErrorGenerator.generate();
     }
 }
