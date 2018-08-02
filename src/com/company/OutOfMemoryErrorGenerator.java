@@ -3,14 +3,14 @@ package com.company;
 import java.util.*;
 
 public class OutOfMemoryErrorGenerator {
-    public static void generate(){
+    public static void generate() {
         Stack stack = new Stack();
         try {
             for (int i = 0; i < 71400000; i++) {
                 stack.push(i);
-               // stack.pop();
+                stack.pop();
             }
-        } catch (OutOfMemoryError e){
+        } catch (OutOfMemoryError e) {
             System.out.println(e + " was cathed");
         }
     }
@@ -29,7 +29,7 @@ public class OutOfMemoryErrorGenerator {
             elements[size++] = e;
         }
 
-        public Object pop(){
+        public Object pop() {
             if (size == 0)
                 throw new EmptyStackException();
             Object result = elements[--size];
@@ -37,7 +37,7 @@ public class OutOfMemoryErrorGenerator {
             return result;
         }
 
-//        Ensure space for at least one more element, roughly doubling the capacity each time the array needs to grow.
+        //Ensure space for at least one more element, roughly doubling the capacity each time the array needs to grow.
         private void ensureCapacity() {
             if (elements.length == size)
                 elements = Arrays.copyOf(elements, 2 * size + 1);
